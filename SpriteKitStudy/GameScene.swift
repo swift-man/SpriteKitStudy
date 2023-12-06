@@ -22,7 +22,7 @@ class GameScene: SKScene {
     
     self.addChild(mySprite)
     
-    let demoAction = SKAction.move(to: CGPoint(x: 300, y: 300), duration: 3)
+    let demoAction = SKAction.scale(to: 4, duration: 5)
     mySprite.run(demoAction)
   }
   
