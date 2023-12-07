@@ -23,9 +23,14 @@ class GameScene: SKScene {
     self.addChild(mySprite)
     
     let demoAction = SKAction.scale(to: 4, duration: 5)
-    mySprite.run(demoAction)
+//    mySprite.run(demoAction)
+    
+    let demoAction2 = SKAction.rotate(byAngle: 5, duration: 5)
+//    mySprite.run(demoAction2)
+    
+    let actionSequence = SKAction.sequence([demoAction, demoAction2])
+    mySprite.run(actionSequence)
   }
-  
   
   func touchDown(atPoint pos : CGPoint) {
     if let n = self.spinnyNode?.copy() as! SKShapeNode? {
