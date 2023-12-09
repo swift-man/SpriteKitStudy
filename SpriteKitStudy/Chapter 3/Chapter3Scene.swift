@@ -14,6 +14,8 @@ class Chapter3Scene: SKScene {
   
   let bee = SKSpriteNode()
   
+  let ground = Ground()
+  
   override func didMove(to view: SKView) {
     self.anchorPoint = .zero
     
@@ -30,6 +32,12 @@ class Chapter3Scene: SKScene {
     let bee3 = Bee()
     bee3.position = CGPoint(x: 200, y: 325)
     self.addChild(bee3)
+    
+    ground.position = CGPoint(x: -self.size.width * 2, y: 100)
+    
+    ground.size = CGSize(width: self.size.width * 6, height: 0)
+    ground.createChildren()
+    self.addChild(ground)
   }
   
   override func didSimulatePhysics() {
