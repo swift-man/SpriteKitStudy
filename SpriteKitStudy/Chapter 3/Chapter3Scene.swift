@@ -1,5 +1,5 @@
 //
-//  Chapter2Scene.swift
+//  Chapter3Scene.swift
 //  SpriteKitStudy
 //
 //  Created by SwiftMan on 12/9/23.
@@ -8,7 +8,7 @@
 import SpriteKit
 import GameplayKit
 
-class Chapter2Scene: SKScene {
+class Chapter3Scene: SKScene {
   
   let cam = SKCameraNode()
   
@@ -22,6 +22,14 @@ class Chapter2Scene: SKScene {
     self.camera = cam
     
     self.addTheFlyingBee()
+    
+    let bee2 = Bee()
+    bee2.position = CGPoint(x: 325, y: 325)
+    self.addChild(bee2)
+    
+    let bee3 = Bee()
+    bee3.position = CGPoint(x: 200, y: 325)
+    self.addChild(bee3)
   }
   
   override func didSimulatePhysics() {

@@ -89,6 +89,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <listContentConfiguration key="contentConfiguration" text="Chapter 3" secondaryText=""/>
+                                        <connections>
+                                            <segue destination="fIJ-ax-9qo" kind="show" id="ezi-uT-qaw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -119,6 +122,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4y-r8-4oM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1732" y="310"/>
+        </scene>
+        <!--Chapter3 View Controller-->
+        <scene sceneID="V3A-LG-6CX">
+            <objects>
+                <viewController id="fIJ-ax-9qo" customClass="Chapter3ViewController" customModule="SpriteKitStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ea-KC-tFe" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gRk-AJ-bfC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hJ5-pG-Gp1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbC-yh-lH7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1702" y="1029"/>
         </scene>
     </scenes>
     <resources>
