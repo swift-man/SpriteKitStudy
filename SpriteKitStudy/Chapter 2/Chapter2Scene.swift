@@ -18,58 +18,22 @@ class Chapter2Scene: SKScene {
     
     self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
     
-    let bee = SKSpriteNode(imageNamed: "bee")
-    bee.size = CGSize(width: 100, height: 100)
+    let bee = SKSpriteNode()
+    bee.size = CGSize(width: 28, height: 24)
     bee.position = CGPoint(x: 250, y: 250)
     self.addChild(bee)
+    
+    let beeAtlas = SKTextureAtlas(named: "Chapter2")
+    
+    let beeFrames: [SKTexture] = [
+      beeAtlas.textureNamed("bee"),
+      beeAtlas.textureNamed("bee-fly")
+    ]
+    
+    let flyAction = SKAction.animate(with: beeFrames,
+                                     timePerFrame: 0.14)
+    
+    let beeAction = SKAction.repeatForever(flyAction)
+    bee.run(beeAction)
   }
-  
-//  func touchDown(atPoint pos : CGPoint) {
-//    if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//      n.position = pos
-//      n.strokeColor = SKColor.green
-//      self.addChild(n)
-//    }
-//  }
-//  
-//  func touchMoved(toPoint pos : CGPoint) {
-//    if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//      n.position = pos
-//      n.strokeColor = SKColor.blue
-//      self.addChild(n)
-//    }
-//  }
-//  
-//  func touchUp(atPoint pos : CGPoint) {
-//    if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-//      n.position = pos
-//      n.strokeColor = SKColor.red
-//      self.addChild(n)
-//    }
-//  }
-//  
-//  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//    if let label = self.label {
-//      label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-//    }
-//    
-//    for t in touches { self.touchDown(atPoint: t.location(in: self)) }
-//  }
-//  
-//  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-//    for t in touches { self.touchMoved(toPoint: t.location(in: self)) }
-//  }
-//  
-//  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-//    for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-//  }
-//  
-//  override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-//    for t in touches { self.touchUp(atPoint: t.location(in: self)) }
-//  }
-//  
-//  
-//  override func update(_ currentTime: TimeInterval) {
-//    // Called before each frame is rendered
-//  }
 }
