@@ -24,8 +24,12 @@ class Chapter3Scene: SKScene {
     self.camera = cam
     
     let bee2 = Bee()
+    
     bee2.position = CGPoint(x: 325, y: 325)
     self.addChild(bee2)
+    
+    bee2.physicsBody?.mass = 0.2
+    bee2.physicsBody?.applyImpulse(CGVector(dx: -25, dy: 0))
     
     let bee3 = Bee()
     bee3.position = CGPoint(x: 200, y: 325)
