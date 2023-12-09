@@ -10,15 +10,25 @@ import GameplayKit
 
 class Chapter2Scene: SKScene {
   
-  private var label : SKLabelNode?
-  private var spinnyNode : SKShapeNode?
+  let cam = SKCameraNode()
+  
+  let bee = SKSpriteNode()
   
   override func didMove(to view: SKView) {
     self.anchorPoint = .zero
     
     self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
     
-    let bee = SKSpriteNode()
+    self.camera = cam
+    
+    self.addTheFlyingBee()
+  }
+  
+  override func didSimulatePhysics() {
+    self.camera!.position = bee.position
+  }
+  
+  func addTheFlyingBee() {
     bee.size = CGSize(width: 28, height: 24)
     bee.position = CGPoint(x: 250, y: 250)
     self.addChild(bee)
@@ -40,7 +50,7 @@ class Chapter2Scene: SKScene {
                                    y: -10,
                                    duration: 2)
     let pathRight = SKAction.moveBy(x: 200,
-                                    y: 10, 
+                                    y: 10,
                                     duration: 2)
     
     let flipTextureNegative = SKAction.scaleX(to: -1, duration: 0)
