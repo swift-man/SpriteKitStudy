@@ -35,5 +35,26 @@ class Chapter2Scene: SKScene {
     
     let beeAction = SKAction.repeatForever(flyAction)
     bee.run(beeAction)
+    
+    let pathLeft = SKAction.moveBy(x: -200,
+                                   y: -10,
+                                   duration: 2)
+    let pathRight = SKAction.moveBy(x: 200,
+                                    y: 10, 
+                                    duration: 2)
+    
+    let flipTextureNegative = SKAction.scaleX(to: -1, duration: 0)
+    let flipTexturePositive = SKAction.scaleX(to: 1, duration: 0)
+    
+    let flightOfTheBee = SKAction.sequence([
+      pathLeft,
+      flipTextureNegative,
+      pathRight,
+      flipTexturePositive
+    ])
+    
+    let neverEndingFlight = SKAction.repeatForever(flightOfTheBee)
+    
+    bee.run(neverEndingFlight)
   }
 }
