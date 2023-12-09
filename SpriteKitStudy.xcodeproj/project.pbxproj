@@ -16,6 +16,7 @@
 		E546B27B2B24B6210026A9EF /* Chapter3Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546B27A2B24B6210026A9EF /* Chapter3Scene.swift */; };
 		E546B27D2B24B6600026A9EF /* Chapter3Scene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E546B27C2B24B6600026A9EF /* Chapter3Scene.sks */; };
 		E546B27F2B24B7B40026A9EF /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546B27E2B24B7B40026A9EF /* Ground.swift */; };
+		E546B2812B24BA2F0026A9EF /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E546B2802B24BA2F0026A9EF /* Player.swift */; };
 		E559308F2B2089CB007A6C61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E559308E2B2089CB007A6C61 /* AppDelegate.swift */; };
 		E55930912B2089CB007A6C61 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E55930902B2089CB007A6C61 /* GameScene.sks */; };
 		E55930932B2089CB007A6C61 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E55930922B2089CB007A6C61 /* Actions.sks */; };
@@ -36,6 +37,7 @@
 		E546B27A2B24B6210026A9EF /* Chapter3Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter3Scene.swift; sourceTree = "<group>"; };
 		E546B27C2B24B6600026A9EF /* Chapter3Scene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Chapter3Scene.sks; sourceTree = "<group>"; };
 		E546B27E2B24B7B40026A9EF /* Ground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		E546B2802B24BA2F0026A9EF /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		E559308B2B2089CB007A6C61 /* SpriteKitStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpriteKitStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E559308E2B2089CB007A6C61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E55930902B2089CB007A6C61 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				E546B27A2B24B6210026A9EF /* Chapter3Scene.swift */,
 				E546B27C2B24B6600026A9EF /* Chapter3Scene.sks */,
 				E546B27E2B24B7B40026A9EF /* Ground.swift */,
+				E546B2802B24BA2F0026A9EF /* Player.swift */,
 			);
 			path = "Chapter 3";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E546B2812B24BA2F0026A9EF /* Player.swift in Sources */,
 				E546B2792B24B6180026A9EF /* Chapter3ViewController.swift in Sources */,
 				E55930952B2089CB007A6C61 /* GameScene.swift in Sources */,
 				E546B2772B24B4DD0026A9EF /* Bee.swift in Sources */,
