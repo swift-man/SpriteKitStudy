@@ -19,7 +19,7 @@ class Chapter4ViewController: UIViewController {
     super.viewWillLayoutSubviews()
     
     if let view = self.view as! SKView? {
-      if let scene = SKScene(fileNamed: "Chapter3Scene") {
+      if let scene = SKScene(fileNamed: "Chapter4Scene") {
         scene.scaleMode = .aspectFill
         scene.size = view.bounds.size
         

@@ -62,11 +62,10 @@ class Player: SKSpriteNode, GameSprite {
     ])
   }
   
-  
-  
   func onTap() {
     
   }
   
+  func update() {}
   
 }
