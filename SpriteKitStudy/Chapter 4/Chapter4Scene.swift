@@ -7,6 +7,7 @@
 
 import SpriteKit
 import GameplayKit
+import CoreMotion
 
 class Chapter4Scene: SKScene {
   
@@ -15,6 +16,8 @@ class Chapter4Scene: SKScene {
   let player = Player()
   
   let ground = Ground()
+  
+  let motionManager = CMMotionManager()
   
   override func didMove(to view: SKView) {
     self.anchorPoint = .zero
@@ -40,10 +43,39 @@ class Chapter4Scene: SKScene {
     
     player.position = CGPoint(x: 150, y: 250)
     self.addChild(player)
+    
+    self.motionManager.startAccelerometerUpdates()
   }
   
   override func update(_ currentTime: TimeInterval) {
     player.update()
+    
+    if let accelData = self.motionManager.accelerometerData {
+      var forceAmount: CGFloat = 0
+      var movement = CGVector()
+      
+      if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+        let interfaceOrientation = windowScene.interfaceOrientation
+        switch interfaceOrientation {
+        case .unknown, .portrait, .portraitUpsideDown:
+          forceAmount = 0
+        case .landscapeLeft:
+          forceAmount = 20000
+        case .landscapeRight:
+          forceAmount = -20000
+        @unknown default:
+          forceAmount = 0
+        }
+      }
+      
+      if accelData.acceleration.y > 0.15 {
+        movement.dx = forceAmount
+      } else if accelData.acceleration.y < -0.15 {
+        movement.dx = -forceAmount
+      }
+      
+      player.physicsBody?.applyForce(movement)
+    }
   }
   
   override func didSimulatePhysics() {
