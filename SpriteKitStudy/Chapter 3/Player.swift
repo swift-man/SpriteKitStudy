@@ -60,6 +60,15 @@ class Player: SKSpriteNode, GameSprite {
       SKAction.repeatForever(soarAction),
       rotateDownAction
     ])
+    
+    let bodyTexture = textureAtlas.textureNamed("pieree-flying-3")
+    self.physicsBody = SKPhysicsBody(
+      texture: bodyTexture,
+      size: self.size)
+    
+    self.physicsBody?.linearDamping = 0.9 // 운동량 잃기
+    self.physicsBody?.mass = 30 // 30Kg
+    self.physicsBody?.allowsRotation = false
   }
   
   func onTap() {
